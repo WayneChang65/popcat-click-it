@@ -1,0 +1,15 @@
+{
+  "name": "popcat-click-it",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wayne Chang",
+  "license": "ISC",
+  "dependencies": {
+    "@waynechang65/fml-consolelog": "^1.1.0",
+    "puppeteer": "^10.2.0"
+  }
+}
