@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "high" : "node index.js high",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Wayne Chang",

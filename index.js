@@ -1,8 +1,10 @@
 'use strict';
+const DEBUG = false;
+const HIGH_EFFICIENCY = (process.argv[2] === 'high') ? true : false;
+
 const puppeteer = require('puppeteer');
 const fmlog = require('@waynechang65/fml-consolelog').log;
 const os = require('os');
-const DEBUG = false;
 const userAgent = 'Mozilla/5.0.1 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3723.0 Safari/537.36';
 const maSize = 10; // moving average (size = 10)
 const avg = (nums) => nums.reduce((a, b) => a + b) / nums.length;
@@ -21,21 +23,15 @@ async function init(opt) {
 		}, opt));
 
 	page = await browser.newPage();
-	await page.setRequestInterception(true);
-	page.on('request', request => {
-		if (request.resourceType() === 'image')
-			request.abort();
-		else
-			request.continue();
-	});
 	page.setUserAgent(userAgent);
     fmlog('sys_msg', ['POPCAT-Click-it', 'Ready. Go!']);
 }
 
-async function clickloop() {
+async function clickloop1() {
     const url = 'https://popcat.click';
     try {
         await page.goto(url, { waitUntil: 'networkidle0' });
+        fmlog('sys_msg', ['Click Mode', 'Running.']);
         let i = 0;
         for(;;) {
             let startRun = process.hrtime(); // --START--
@@ -61,6 +57,27 @@ async function clickloop() {
     }
 }
 
+async function clickloop2() {
+    const url = 'https://popcat.click';
+    try {
+        await page.goto(url, { waitUntil: 'networkidle0' });
+        fmlog('sys_msg', ['High Effiency Mode', 'Running.']);
+        await page.evaluate(() => {
+            let i = 0;
+            setInterval(() => {
+                fetch('https://stats.popcat.click/pop?pop_count=800&captcha_token=TWNO1');
+                console.log(`Total ${ i += 800 } clicks  Speed(cal avg): ${ Math.round(30000 / 800) } ms/click` + 
+                    `  Speed(cal avg): ${Math.round(1000 / (30000 / 800))} PPS`);
+            }, 30000);
+        });
+        page.on('console', consoleObj => console.log(consoleObj.text()));
+    } catch (e) {
+        fmlog('error_msg', ['ERROR', e.toString(), '']);
+		console.log(e.stack);
+		await browser.close();
+    }
+}
+
 function calculatePPS(time_click, size) {
     timeClicks.push(time_click);
     if (timeClicks.length > size) timeClicks = timeClicks.slice(1);
@@ -75,5 +92,5 @@ function calculatePPS(time_click, size) {
 
 (async () => {
     await init();
-    await clickloop();
+    (HIGH_EFFICIENCY) ? await clickloop2() : await clickloop1();
 })();
