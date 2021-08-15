@@ -23,6 +23,7 @@ async function init(opt) {
 		}, opt));
 
 	page = await browser.newPage();
+    await page.setDefaultNavigationTimeout(180 * 1000); // 3 mins
 	page.setUserAgent(userAgent);
     fmlog('sys_msg', ['POPCAT-Click-it', 'Ready. Go!']);
 }
