@@ -1,13 +1,14 @@
 {
   "name": "popcat-click-it",
   "version": "1.0.0",
-  "description": "",
+  "description": "A tool for clicking popcat automatically",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Wayne Chang",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@waynechang65/fml-consolelog": "^1.1.0",
     "puppeteer": "^10.2.0"
