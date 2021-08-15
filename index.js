@@ -49,7 +49,7 @@ async function clickloop() {
                 `Speed: ${pps} PPS`, `Speed(avg): ${ms} ms/click`,
                     (endRun[1] / 1000000).toString()
                 ]);
-            if (i !== 1 && (i % 10000) === 0) {
+            if (i !== 1 && (i % 100000) === 0) {
                 await page.waitForTimeout(2000); // 2secs for saving the pic
                 await page.screenshot({ path: `result-${i}.png` });
             }
