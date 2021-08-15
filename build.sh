@@ -1,1 +1,0 @@
-sudo docker build . -t waynechang65/popcat-click-it:1.0.0  --no-cache
