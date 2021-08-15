@@ -1,13 +1,14 @@
 # popcat-click-it
 popcat-click-it 是一個自動點擊[POPCAT](https://popcat.click/)的程式。  
-  
-popcat-click-it is a program designed to click [POPCAT](https://popcat.click/) automatically.
-
+popcat-click-it is a program designed to click [POPCAT](https://popcat.click/) automatically.  
+![image](https://raw.githubusercontent.com/WayneChang65/popcat-click-it/master/img/001.png)    
 ## 這個程式能做什麼呢？ (What can it do ?)
 * 自動點擊  
 Click automatically
 * 顯示點擊速度，如：ms/click 或 pps  
 Display click speed. e.g. ms/click or pps  
+![image](https://raw.githubusercontent.com/WayneChang65/popcat-click-it/master/img/002.png)  
+![image](https://raw.githubusercontent.com/WayneChang65/popcat-click-it/master/img/003.png)  
 
 ## 如何使用？ (How to use it?)  
 ### Node.js
