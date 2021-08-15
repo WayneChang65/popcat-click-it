@@ -8,6 +8,8 @@ popcat-click-it is a program designed to click [POPCAT](https://popcat.click/) a
 Click automatically
 * 顯示點擊速度，如：ms/click 或 pps  
 Display click speed. e.g. ms/click or pps  
+* 每10萬次自動截圖一次  
+Screenshot every 100,000 clicks  
 * 使用puppeteer技術，可以無頭(headless)。內定在linux os無頭，在其他os有頭  
 This project use puppeteer. It can be headless. (in linux os is headless by default)  
 ![image](https://raw.githubusercontent.com/WayneChang65/popcat-click-it/master/img/002.png)  
@@ -39,11 +41,11 @@ Download docker image from [Dockerhub](https://hub.docker.com/)
 ```
 docker pull waynechang65/popcat-click-it:1.0.0
 ```  
-2. 由下載的docker image建立docker container
-Run docker container by downloaded image
+2. 由下載的docker image建立docker container  
+Run docker container by downloaded image  
 ```
 docker container run waynechang65/popcat-click-it:1.0.0
-```
+```  
 
 ## 貢獻一己之力 (Contribution)
 popcat-click-it 雖然是一個小模組，但本人還是希望這個專案能夠持續進步！若有發現臭蟲(bug)或問題，請幫忙在Issue留言告知詳細情形。  
