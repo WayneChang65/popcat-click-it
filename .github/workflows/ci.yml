@@ -22,10 +22,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push
-        id: docker_build
+        name: Build and push for CLICK MODE
+        id: docker_build_cl
         uses: docker/build-push-action@v2
         with:
           file: Dockerfile_click
           push: true
           tags: waynechang65/popcat-click-it:cl-latest
+      -
+        name: Build and push for HIGH EFFICIENCY MODE
+        id: docker_build_hi
+        uses: docker/build-push-action@v2
+        with:
+          file: Dockerfile_high
+          push: true
+          tags: waynechang65/popcat-click-it:hi-latest
