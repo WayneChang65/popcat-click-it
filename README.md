@@ -63,7 +63,7 @@ docker pull waynechang65/popcat-click-it:cl-1.0.0
 docker pull waynechang65/popcat-click-it:hi-1.0.0
 ```  
 2. 由下載的docker image建立docker container  
-Run docker container by downloaded image  
+Run docker container by the downloaded image  
 * Click Mode  
 ```
 docker container run waynechang65/popcat-click-it:cl-1.0.0
@@ -91,4 +91,4 @@ docker container run waynechang65/popcat-click-it:hi-1.0.0
 popcat-click-it 雖然是一個小模組，但本人還是希望這個專案能夠持續進步！若有發現臭蟲(bug)或問題，請幫忙在Issue留言告知詳細情形。  
 歡迎共同開發。歡迎Fork / Pull Request，謝謝。:)  
 
-Even though popcat-click-it is a small project, I hope it can be improving. If there is any issue, please comment and welcome to fork and send Pull Request. Thanks. :)
+Even though popcat-click-it is a small project, I hope it can be improving. If there is any issue, please comment and welcome to fork or send Pull Request. Thanks. :)
