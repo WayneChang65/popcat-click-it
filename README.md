@@ -56,21 +56,21 @@ npm run high
 Download docker image from [Dockerhub](https://hub.docker.com/)  
 * Click Mode  
 ```
-docker pull waynechang65/popcat-click-it:cl-1.0.0
+docker pull waynechang65/popcat-click-it:cl-latest
 ```  
 * High Efficiency Mode  
 ```
-docker pull waynechang65/popcat-click-it:hi-1.0.0
+docker pull waynechang65/popcat-click-it:hi-latest
 ```  
 2. 由下載的docker image建立docker container  
 Run docker container by the downloaded image  
 * Click Mode  
 ```
-docker container run waynechang65/popcat-click-it:cl-1.0.0
+docker container run waynechang65/popcat-click-it:cl-latest
 ```  
 * High Efficiency Mode  
 ```
-docker container run waynechang65/popcat-click-it:hi-1.0.0
+docker container run waynechang65/popcat-click-it:hi-latest
 ```  
 
 ## 兩個模式的差異 (Difference between 2 modes)  
