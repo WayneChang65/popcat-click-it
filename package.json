@@ -5,11 +5,26 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "high" : "node index.js high",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "high": "node index.js high",
+    "test": "jest --detectOpenHandles",
+    "lint": "eslint index.js lib/**/*.js test/**/*.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WayneChang65/popcat-click-it"
+  },
+  "keywords": [
+    "popcat",
+    "autoclicker",
+    "puppeteer",
+    "popcatautoclick"
+  ],
   "author": "Wayne Chang",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WayneChang65/popcat-click-it/issues"
+  },
+  "homepage": "https://github.com/WayneChang65/popcat-click-it#readme",
   "dependencies": {
     "@waynechang65/fml-consolelog": "^1.1.0",
     "puppeteer": "^10.2.0"
